@@ -7,9 +7,10 @@ type LoginFormProps = {
   error?: string | null;
   isLoading?: boolean;
   className?: string;
+  onRegisterClick?: () => void;
 };
 
-function LoginForm({ onSubmit, error, isLoading, className }: LoginFormProps) {
+function LoginForm({ onSubmit, error, isLoading, className, onRegisterClick }: LoginFormProps) {
   return (
     <form onSubmit={onSubmit} className={cn("space-y-6", className)}>
       <LabelField
@@ -41,6 +42,7 @@ function LoginForm({ onSubmit, error, isLoading, className }: LoginFormProps) {
       <div className="flex justify-between text-sm">
         <button
           type="button"
+          onClick={onRegisterClick}
           className="cursor-pointer border-none bg-transparent p-0 font-semibold text-[var(--accent)] transition-colors hover:text-[var(--accent-hover)]"
         >
           Crear cuenta

@@ -29,13 +29,22 @@ export default function LoginPage() {
     }, 500);
   }
 
+  function handleRegisterClick() {
+    navigate("/register", { replace: true });
+  }
+
   return (
     <div
       className={cn(
         "flex min-h-dvh w-full flex-col items-center justify-center bg-[var(--bg-page)] px-4 py-12 sm:px-6 lg:px-8"
       )}
     >
-      <Login onSubmit={handleSubmit} error={error} isLoading={isLoading} />
+      <Login
+        onSubmit={handleSubmit}
+        error={error}
+        isLoading={isLoading}
+        onRegisterClick={handleRegisterClick}
+      />
     </div>
   );
 }

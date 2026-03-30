@@ -1,38 +1,38 @@
 import AppLogo from "@/components/atoms/logo";
-import LoginForm from "@/components/molecules/form/loginForm";
+import RegisterForm from "@/components/molecules/form/registerForm";
 import { cn } from "@/lib/utils";
 
-type LoginProps = {
-  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-  error?: string | null;
+type RegisterProps = {
+  onSubmit: (data: {
+    businessName: string;
+    email: string;
+    password: string;
+    confirmPassword: string;
+  }) => void;
   isLoading?: boolean;
   className?: string;
-  onRegisterClick?: () => void;
+  onLoginClick?: () => void;
 };
 
-function Login({
-  onSubmit,
-  error,
-  isLoading,
-  className,
-  onRegisterClick,
-}: LoginProps) {
+function Register({ onSubmit, isLoading, className, onLoginClick }: RegisterProps) {
   return (
     <div className={cn("w-full", className)}>
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <AppLogo letter="A" size="md" />
         <h2 className="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-[var(--text)]">
-          Inicia sesión en tu cuenta
+          Crear cuenta
         </h2>
+        <p className="mt-2 text-center text-sm text-[var(--text-muted)]">
+          Registra tu negocio para comenzar
+        </p>
       </div>
 
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
         <div className="rounded-lg bg-[var(--card-bg)] px-6 py-12 shadow-[var(--shadow)] sm:px-12">
-          <LoginForm
+          <RegisterForm
             onSubmit={onSubmit}
-            error={error}
             isLoading={isLoading}
-            onRegisterClick={onRegisterClick}
+            onLoginClick={onLoginClick}
           />
         </div>
       </div>
@@ -40,4 +40,4 @@ function Login({
   );
 }
 
-export default Login;
+export default Register;
