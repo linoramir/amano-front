@@ -24,7 +24,7 @@ const MAIN_MENU = [
   { label: "Dashboard", icon: Home, active: true },
   { label: "Rendimiento", icon: TrendingUp },
   { label: "Boletas", icon: FileText },
-  { label: "Clientes", icon: Users },
+  { label: "Clientes", icon: Users, href: "/clientes/CLI-001" },
   { label: "Notificaciones", icon: Bell },
   { label: "Lista negra", icon: Ban },
 ];
