@@ -21,19 +21,19 @@ import {
 } from "@/lib/mocks/dashboard";
 
 const MAIN_MENU = [
-  { label: "Dashboard", icon: Home, active: true },
-  { label: "Rendimiento", icon: TrendingUp },
-  { label: "Boletas", icon: FileText },
-  { label: "Clientes", icon: Users },
-  { label: "Notificaciones", icon: Bell },
-  { label: "Lista negra", icon: Ban },
+  { label: "Dashboard", icon: Home, active: true, to: "/dashboard" },
+  { label: "Rendimiento", icon: TrendingUp, to: "/rendimiento" },
+  { label: "Boletas", icon: FileText, to: "/boletas" },
+  { label: "Clientes", icon: Users, to: "/clientes" },
+  { label: "Notificaciones", icon: Bell, to: "/notificaciones" },
+  { label: "Lista negra", icon: Ban, to: "/lista-negra" },
 ];
 
 const MI_NEGOCIO = [
-  { label: "Productos", icon: Package },
-  { label: "Ventas", icon: ShoppingCart },
-  { label: "Stock", icon: PackageCheck },
-  { label: "Historial", icon: History },
+  { label: "Productos", icon: Package, to: "/productos" },
+  { label: "Ventas", icon: ShoppingCart, to: "/ventas" },
+  { label: "Stock", icon: PackageCheck, to: "/stock" },
+  { label: "Historial", icon: History, to: "/historial" },
 ];
 
 export default function DashboardPage() {
