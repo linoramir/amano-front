@@ -3,6 +3,7 @@ import { ThemeSync } from "./theme";
 import LoginPage from "./pages/login";
 import RegisterPage from "./pages/register";
 import DashboardPage from "./pages/dashboard";
+import ClientProfilePage from "./pages/clientProfile";
 import "./App.css";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/clientes/:id" element={<ClientProfilePage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
