@@ -6,7 +6,7 @@ export type SectionItem = {
   icon: LucideIcon;
   label: string;
   active?: boolean;
-  href?: string;
+  to?: string;
 };
 
 type SectionProps = {
@@ -22,28 +22,16 @@ function Section({ title, items, onItemClick }: SectionProps) {
         {title}
       </p>
       <ul className="space-y-0.5">
-        {items.map((item) =>
-          item.href ? (
-            <li key={item.label}>
-              <Link to={item.href} className="no-underline">
-                <Item
-                  icon={item.icon}
-                  label={item.label}
-                  active={item.active}
-                  onClick={() => onItemClick?.(item)}
-                />
-              </Link>
-            </li>
-          ) : (
-            <Item
-              key={item.label}
-              icon={item.icon}
-              label={item.label}
-              active={item.active}
-              onClick={() => onItemClick?.(item)}
-            />
-          )
-        )}
+        {items.map((item) => (
+          <Item
+            key={item.label}
+            icon={item.icon}
+            label={item.label}
+            active={item.active}
+            to={item.to}
+            onClick={() => onItemClick?.(item)}
+          />
+        ))}
       </ul>
     </nav>
   );
